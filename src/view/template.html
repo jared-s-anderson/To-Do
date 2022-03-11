@@ -14,8 +14,9 @@
           <a href="index.html"> Check<span class="highlight">-It</span></a>
         </div>
     </header>
-    <nav>
-        <ul id="primary-nav">
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primary-nav" class="hide">
             <li><a href="/src/index.html">Home</a></li>
             <li><a href="/src/view/calendar.html">Calendar</a></li>
             <li><a href="/src/view/to-do.html">To-Do List</a></li>
@@ -25,8 +26,8 @@
         <h1>This is some placeholder text.</h1>
     </main>
     <footer>
-        <hr>
         <p>Check-It is legit.</p>
     </footer>
+    <script src="/src/js/menu.js"></script>
 </body>
 </html>

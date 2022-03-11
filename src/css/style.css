@@ -218,15 +218,22 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+  border-top: 2px solid var(--primary-color);
 }
 
 /* Small Screen */
 @media only screen and (max-width: 480px) {
+  nav {
+    text-align: center;
+    padding: 0px;
+  }
+
   nav ul {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     list-style: none;
+    padding-left: 10;
   }
 
   nav ul li {
@@ -235,6 +242,9 @@ footer {
     padding: 10px;
   }
 
+  nav ul.hide {
+    display: none;
+  }
 
 }
 
@@ -245,9 +255,13 @@ footer {
     max-width: 100%;
   }
 
+  nav button {
+    display: none;
+  }
+
   nav ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     list-style: none;
   }
 
