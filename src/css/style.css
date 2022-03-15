@@ -221,6 +221,11 @@ footer {
   border-top: 2px solid var(--primary-color);
 }
 
+
+.login {
+  text-align: center;
+}
+
 /* Small Screen */
 @media only screen and (max-width: 480px) {
   nav {
@@ -325,3 +330,4 @@ nav ul li a:hover
   {
     margin-right: 25px;
   }
+
