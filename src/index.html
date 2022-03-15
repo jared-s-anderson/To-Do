@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check-It | Home</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a template for the view pages">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Check-It</title>
+</head>
+<body>
     <header class="divider">
-      <div class="logo">
-        <a href="index.html"> Check<span class="highlight">-It</span></a>
-      </div>
+        <div class="logo">
+          <a href="index.html"> Check<span class="highlight">-It</span></a>
+        </div>
     </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primary-nav" class="hide">
+            <li><a href="/src/index.html">Home</a></li>
+            <li><a href="/src/view/calendar.html">Calendar</a></li>
+            <li><a href="/src/view/to-do.html">To-Do List</a></li>
+        </ul>
+    </nav>
     <main class="divider">
       <section class="login">
         <h1>Login</h1>
@@ -24,8 +34,10 @@
         </form>
         <a href="./view/sign-up.html">Not a user? Sign Up</a>
       </section>
-      
     </main>
-    <footer>&copy;NOT a real business</footer>
-  </body>
+    <footer>
+        <p>Check-It is legit.</p>
+    </footer>
+    <script src="/src/js/menu.js"></script>
+</body>
 </html>
