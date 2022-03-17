@@ -331,3 +331,16 @@ nav ul li a:hover
     margin-right: 25px;
   }
 
+#to-do-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+#to-do-list ul li {
+  cursor: pointer;
+  position: relative;
+}
+
+.add-button {
+  cursor: pointer;
+}
