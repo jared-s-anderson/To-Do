@@ -11,13 +11,13 @@
 <body>
     <header class="divider">
         <div class="logo">
-          <a href="index.html"> Check<span class="highlight">-It</span></a>
+          <a href="../index.html">Check<span class="highlight">-It</span></a>
         </div>
     </header>
     <nav class="clearfix">
         <button onclick="toggleMenu()">&#9776;</button>
         <ul id="primary-nav" class="hide">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="../view/calendar.html">Calendar</a></li>
             <li><a href="../view/to-do.html">To-Do List</a></li>
         </ul>
@@ -26,11 +26,11 @@
       <section class="login">
         <h1>Login</h1>
         <form action="#" id="login">
-          <div>
-            <label>Email</label><br><input type="text", name="email", id="email", autocomplete="off" autocapitalize="on" required><br>
-            <label>Password</label><br><input type="password", name="password", id="password", autocomplete="off" autocapitalize="on" required>
-          </div>
-          <button>Login</button>
+          <fieldset>
+            <label>Email</label><input type="text", name="email", id="email", autocomplete="off" autocapitalize="on" required>
+            <label>Password</label><input type="password", name="password", id="password", autocomplete="off" autocapitalize="on" required>
+          </fieldset>
+            <br><button class="login-button">Login</button><br>
         </form>
         <a href="../view/sign-up.html">Not a user? Sign Up</a>
       </section>
