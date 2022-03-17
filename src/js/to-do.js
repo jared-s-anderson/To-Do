@@ -12,7 +12,5 @@ function newItem() {
     document.getElementById('list-input').value = '';
 
     var span = document.createElement('span');
-    var textElement = document.createElement('U+2212');
-    span.appendChild(textElement)
-    span.appendChild(span);
+    list.appendChild(span)
 }
