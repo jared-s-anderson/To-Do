@@ -23,14 +23,16 @@
         </ul>
     </nav>
     <main>
-        <div>
-        <h1>To-Do List</h1>
-        <form method="post">
-        <input type="text" id="list-input" placeholder="Add list item">
-        <span onclick="newItem()" class="add-button">+</span>
-        </form>
+        <div class="list-container">
+            <div class="todo">
+                <h1>To-Do List</h1>
+                    <div class="list-input">
+                        <input class="input-value" type="text" placeholder="Add list item" value="">
+                        <span class="add-btn">&plus;</span>
+                    </div>
+                    <div class="list-item"></div>
+            </div>
         </div>
-        <ul id="to-do-list"></ul>
     </main>
     <footer>
         <p>Check-It is legit.</p>

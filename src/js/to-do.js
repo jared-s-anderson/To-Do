@@ -1,16 +1,44 @@
-function newItem() {
-    var list = document.createElement('li');
-    var listValue = document.getElementById('list-input').value;
-    var text = document.createTextNode(listValue);
+const input = document.getElementsByClassName('input-value')[0];
+const addButton = document.getElementsByClassName('add-btn')[0];
 
-    list.append(text)
-    if (listValue === '') {
-        alert('Something needs to be written in the to-do list.')
+addButton.addEventListener('click', () => {
+    let items = JSON.parse(localStorage.getItem('item'));
+    if (items === null) {
+        itemList = [];
     } else {
-        document.getElementById('to-do-list').appendChild(list)
+        itemList = items;
     }
-    document.getElementById('list-input').value = '';
+    itemList.push(input.value);
+    localStorage.setItem('item', JSON.stringify(itemList));
+    displayTodoList();
+});
 
-    var span = document.createElement('span');
-    list.appendChild(span)
+function displayTodoList() {
+
+    let output = '';
+    let showList = document.querySelector('.list-item');
+    let items = JSON.parse(localStorage.getItem('item'));
+    if (items === null) {
+        itemList = [];
+    } else {
+        itemList = items;
+    }
+    
+    itemList.forEach((element, index) => {
+        output += `
+        <div class="todo-list">
+        <p class="items">- ${element}</p>
+        <button class="delete-item" onClick="deleteItem(${index})">X</button>
+        </div>
+        `
+    })
+    showList.innerHTML = output;
+}
+displayTodoList();
+
+function deleteItem(index) {
+    let items = JSON.parse(localStorage.getItem('item'));
+    itemList.splice(index, 1);
+    localStorage.setItem('item', JSON.stringify(itemList));
+    displayTodoList();
 }
