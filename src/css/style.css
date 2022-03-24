@@ -255,6 +255,11 @@ form fieldset {
   max-width: 250px;
 }
 
+.signUpError {
+  color: red;
+  visibility: visible;
+}
+
 /* Small Screen */
 @media only screen and (max-width: 480px) {
   nav {
