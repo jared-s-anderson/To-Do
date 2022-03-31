@@ -399,3 +399,13 @@ nav ul li a:hover
   margin-left: 300px;
   margin-top: -50px;
 }
+
+#title {
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
+
+#description {
+  margin-bottom: 20px;
+  margin-top: 2px;
+}
