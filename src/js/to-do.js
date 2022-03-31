@@ -6,12 +6,7 @@ const addButton = document.getElementsByClassName('add-btn')[0];
 addButton.addEventListener('click', () => {
     let title = JSON.parse(localStorage.getItem('title'));
     let desc = JSON.parse(localStorage.getItem('description'));
-    if (title && description === null) {
-        itemList = [];
-    } else {
-        itemList = title;
-    }
-    itemList.push(input.value, description.value);
+    let date = JSON.parse(localStorage.getItem())
     localStorage.setItem('title', JSON.stringify(itemList), );
     localStorage.setItem('description', JSON.stringify(itemList));
     displayTodoList();
@@ -43,13 +38,14 @@ displayTodoList();
 
 function deleteItem(index) {
     let title = JSON.parse(localStorage.getItem('title'));
-    let desc = JSON.parse(localStorage.getItem('description');)
+    let desc = JSON.parse(localStorage.getItem('description'));
     itemList.splice(index, 1);
     localStorage.setItem('title', JSON.stringify(itemList));
     localStorage.setItem('description', JSON.stringify(itemList));
     displayTodoList();
 }
 */
+/*
 
 function formDataToJSON(element) {
     const formData = new FormData(element),
@@ -62,12 +58,74 @@ function formDataToJSON(element) {
     return convertedJSON;
 }
 
+
 document.querySelector('#add-btn').addEventListener('click', (e) => {
     e.preventDefault();
+    
+    items.push(convertedJSON);
+
 
     const formElement = document.forms['add'];
     const json = formDataToJSON(formElement);
-    json.date = new Date();
     console.log(json);
-
+    
 });
+*/
+let items = [];
+const addItem = (e) =>{
+    e.preventDefault();
+    let item = {
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        tododate: document.getElementById('tododate').value
+    }
+
+    console.log(item)
+
+    items.push(item);
+    document.forms[0].reset();
+    let pre = document.querySelector('.todo-list');
+    pre.textContent = '\n' + JSON.stringify(items, '\t', 2);
+    localStorage.setItem('Items', JSON.stringify(items));
+}
+
+document.querySelector('#add-btn').addEventListener('click', addItem);
+
+/*
+function addItem() {
+    var list = document.createElement('li');
+    var input = document.getElementById('title').value;
+    var text = document.createTextNode(input);
+
+    list.append(text);
+    if (input === '') {
+        alert('Please make sure to fill out all of the fields.')
+    } else {
+        document.getElementById('todo-list').appendChild(list);
+    }
+    document.getElementById('title').value = '';
+
+    var span = document.createElement('span');
+    var t = document.createTextNode('\u00D7');
+    span.appendChild(t);
+    list.appendChild(span);
+}
+
+function addItem() {
+    var list = document.createElement('li');
+    var input = document.getElementById('input').value;
+    var text = document.createTextNode(input);
+    list.appendChild(text);
+    if (input === '') {
+        alert('The field was left empty.');
+    } else {
+        document.getElementById('todo-list').appendChild(list);
+    } 
+    document.getElementById('input').value = '';
+
+    var span = document.createElement('span');
+    var t = document.createTextNode('');
+    span.appendChild(t);
+    list.appendChild(span)
+}
+*/
