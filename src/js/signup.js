@@ -1,3 +1,7 @@
+import ExternalServices from "./externalServices";
+
+const services = new ExternalServices();
+
 function formDataToJSON(formElement) {
     const formData = new FormData(formElement),
       convertedJSON = {};
@@ -7,6 +11,18 @@ function formDataToJSON(formElement) {
     });
   
     return convertedJSON;
+  }
+
+  async function signup(user){
+    try {
+      const res = await services.signup(user);
+      console.log(res);
+      localStorage.setItem("userID", res.id)
+
+      // document.location = '../';
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 
@@ -30,7 +46,9 @@ document.querySelector('#signup').addEventListener('click', (e) => {
         // alert("Passwords are the same.")
         const formElement = document.forms['sign-up'];
         const json = formDataToJSON(formElement);
+        delete json['password-check']
         console.log(json)
+        signup(json)
 
     }
 

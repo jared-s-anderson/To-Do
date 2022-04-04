@@ -16,7 +16,14 @@ function formDataToJSON(formElement) {
   async function login(user){
     try {
       const res = await services.login(user);
-      console.log(res);
+      if (res.length == 0){
+        alert("Wrong Email or Password.")
+      }
+      else{
+        console.log(res);
+        localStorage.setItem("userID", res[0].id)
+      }
+
       // document.location = '../';
     } catch (err) {
       console.log(err);

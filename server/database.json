@@ -1,37 +1,44 @@
 {
-    "users": [
-        {
-            "email": "hello@world.com",
-            "password": "123qwer",
-            "id": 1
-        },
-        {
-            "email": "newuser@test.com",
-            "password": "qwer1234",
-            "id": 2
-        }
-    ],
-    "tasks": [
-        {
-            "title": "English Homework",
-            "date": "3/24/2022",
-            "discription": "Research 4 papers about Self Driving Cars.",
-            "id": 1,
-            "users": [1]
-          },
-          {
-            "title": "Math Review",
-            "date": "3/22/2022",
-            "discription": "Review for final test. Focus on trig.",
-            "id": 2,
-            "users": [1,2]
-          },
-          {
-              "title": "CS124 Calander Project",
-              "date": "4/3/2022",
-              "discription": "Figure out how to to determine a leap year.",
-              "id": 3,
-              "users": [3]
-          }
-    ]
+  "users": [
+    {
+      "email": "hello@world.com",
+      "password": "123qwer",
+      "id": 1
+    },
+    {
+      "email": "newuser@test.com",
+      "password": "qwer1234",
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "title": "English Homework",
+      "date": "3/24/2022",
+      "discription": "Research 4 papers about Self Driving Cars.",
+      "id": 1,
+      "users": [
+        1
+      ]
+    },
+    {
+      "title": "Math Review",
+      "date": "3/22/2022",
+      "discription": "Review for final test. Focus on trig.",
+      "id": 2,
+      "users": [
+        1,
+        2
+      ]
+    },
+    {
+      "title": "CS124 Calander Project",
+      "date": "4/3/2022",
+      "discription": "Figure out how to to determine a leap year.",
+      "id": 3,
+      "users": [
+        3
+      ]
+    }
+  ]
 }
