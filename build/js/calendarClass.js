@@ -233,35 +233,11 @@ export default class Calendar {
             dayOfMonthElement.innerHTML = this.aMonth[i][0];
 
             const addElement = document.createElement('img');
-            addElement.style.height = '25px';
-            addElement.style.width = '25px';
-            addElement.addEventListener('mouseover', () => {
-                addElement.style.transitionDuration = '1s';
-                addElement.style.transform = 'rotate(-90deg)'
-            });
-            addElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-            addElement.src = '../icons/plus.png';
-
-            const minusElement = document.createElement('img');
-            minusElement.style.height = '25px';
-            minusElement.style.width = '25px';
-
-            minusElement.addEventListener('mouseover', () => {
-                minusElement.style.transitionDuration = '1s';
-                minusElement.style.transform = 'rotate(-90deg)'
-            });
-            minusElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-
-            minusElement.src = '../icons/minus.png';
+            addElement.imageSrcset = '../icons/plus.png';
 
 
             individDay.appendChild(dayOfMonthElement);
             individDay.appendChild(addElement);
-            individDay.appendChild(minusElement);
             month.appendChild(individDay);
         }
         
@@ -274,35 +250,8 @@ export default class Calendar {
             const dayOfMonthElement = document.createElement('span');
             dayOfMonthElement.innerHTML = this.aMonth[i][1];
 
-            const addElement = document.createElement('img');
-            addElement.style.height = '25px';
-            addElement.style.width = '25px';
-            addElement.addEventListener('mouseover', () => {
-                addElement.style.transitionDuration = '1s';
-                addElement.style.transform = 'rotate(-90deg)'
-            });
-            addElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-            addElement.src = '../icons/plus.png';
-
-            const minusElement = document.createElement('img');
-            minusElement.style.height = '25px';
-            minusElement.style.width = '25px';
-
-            minusElement.addEventListener('mouseover', () => {
-                minusElement.style.transitionDuration = '1s';
-                minusElement.style.transform = 'rotate(-90deg)'
-            });
-            minusElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-
-            minusElement.src = '../icons/minus.png';
-
             individDay.appendChild(dayOfMonthElement);
-            individDay.appendChild(addElement);
-            individDay.appendChild(minusElement);
+            
             month.appendChild(individDay);
         }
         
@@ -314,35 +263,8 @@ export default class Calendar {
             const dayOfMonthElement = document.createElement('span');
             dayOfMonthElement.innerHTML = this.aMonth[i][2];
 
-            const addElement = document.createElement('img');
-            addElement.style.height = '25px';
-            addElement.style.width = '25px';
-            addElement.addEventListener('mouseover', () => {
-                addElement.style.transitionDuration = '1s';
-                addElement.style.transform = 'rotate(-90deg)'
-            });
-            addElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-            addElement.src = '../icons/plus.png';
-
-            const minusElement = document.createElement('img');
-            minusElement.style.height = '25px';
-            minusElement.style.width = '25px';
-
-            minusElement.addEventListener('mouseover', () => {
-                minusElement.style.transitionDuration = '1s';
-                minusElement.style.transform = 'rotate(-90deg)'
-            });
-            minusElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-
-            minusElement.src = '../icons/minus.png';
-
             individDay.appendChild(dayOfMonthElement);
-            individDay.appendChild(addElement);
-            individDay.appendChild(minusElement);
+            
             month.appendChild(individDay);
         }
 
@@ -355,35 +277,8 @@ export default class Calendar {
             const dayOfMonthElement = document.createElement('span');
             dayOfMonthElement.innerHTML = this.aMonth[i][3];
 
-            const addElement = document.createElement('img');
-            addElement.style.height = '25px';
-            addElement.style.width = '25px';
-            addElement.addEventListener('mouseover', () => {
-                addElement.style.transitionDuration = '1s';
-                addElement.style.transform = 'rotate(-90deg)'
-            });
-            addElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-            addElement.src = '../icons/plus.png';
-
-            const minusElement = document.createElement('img');
-            minusElement.style.height = '25px';
-            minusElement.style.width = '25px';
-
-            minusElement.addEventListener('mouseover', () => {
-                minusElement.style.transitionDuration = '1s';
-                minusElement.style.transform = 'rotate(-90deg)'
-            });
-            minusElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-
-            minusElement.src = '../icons/minus.png';
-
             individDay.appendChild(dayOfMonthElement);
-            individDay.appendChild(addElement);
-            individDay.appendChild(minusElement);
+            
             month.appendChild(individDay);
         }
         
@@ -396,35 +291,8 @@ export default class Calendar {
             const dayOfMonthElement = document.createElement('span');
             dayOfMonthElement.innerHTML = this.aMonth[i][4];
 
-            const addElement = document.createElement('img');
-            addElement.style.height = '25px';
-            addElement.style.width = '25px';
-            addElement.addEventListener('mouseover', () => {
-                addElement.style.transitionDuration = '1s';
-                addElement.style.transform = 'rotate(-90deg)'
-            });
-            addElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-            addElement.src = '../icons/plus.png';
-
-            const minusElement = document.createElement('img');
-            minusElement.style.height = '25px';
-            minusElement.style.width = '25px';
-
-            minusElement.addEventListener('mouseover', () => {
-                minusElement.style.transitionDuration = '1s';
-                minusElement.style.transform = 'rotate(-90deg)'
-            });
-            minusElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-
-            minusElement.src = '../icons/minus.png';
-
             individDay.appendChild(dayOfMonthElement);
-            individDay.appendChild(addElement);
-            individDay.appendChild(minusElement);
+            
             month.appendChild(individDay);
         }
         
@@ -444,35 +312,8 @@ export default class Calendar {
             const dayOfMonthElement = document.createElement('span');
             dayOfMonthElement.innerHTML = this.aMonth[i][5];
 
-            const addElement = document.createElement('img');
-            addElement.style.height = '25px';
-            addElement.style.width = '25px';
-            addElement.addEventListener('mouseover', () => {
-                addElement.style.transitionDuration = '1s';
-                addElement.style.transform = 'rotate(-90deg)'
-            });
-            addElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-            addElement.src = '../icons/plus.png';
-
-            const minusElement = document.createElement('img');
-            minusElement.style.height = '25px';
-            minusElement.style.width = '25px';
-
-            minusElement.addEventListener('mouseover', () => {
-                minusElement.style.transitionDuration = '1s';
-                minusElement.style.transform = 'rotate(-90deg)'
-            });
-            minusElement.addEventListener('click', () => {
-                window.location.href = '../view/to-do.html';
-            });
-
-            minusElement.src = '../icons/minus.png';
-
             individDay.appendChild(dayOfMonthElement);
-            individDay.appendChild(addElement);
-            individDay.appendChild(minusElement);
+            
             month.appendChild(individDay);
         }
         calendarElement.appendChild(month);
