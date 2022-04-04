@@ -19,8 +19,19 @@ export default class ExternalServices {
     }
 
     async login(user){
-        console.log(test_server + 'users?email_like=' + user.email)
+        // console.log(test_server + 'users?email_like=' + user.email)
         return await fetch(test_server + 'users?email_like=' + user.email).then(convertToJson);
+    }
+
+    async signup(user){
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      };
+      return await fetch(test_server + 'users/', options).then(convertToJson);
     }
 
 }
