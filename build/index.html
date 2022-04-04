@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a template for the view pages">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Check-It</title>
+    <script src="../js/login.js" type="module"></script>
+</head>
+<body>
+    <header class="divider">
+        <div class="logo">
+          <a href="../index.html">Check<span class="highlight">-It</span></a>
+        </div>
+    </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776;</button>
+        <ul id="primary-nav" class="hide">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../view/calendar.html">Calendar</a></li>
+            <li><a href="../view/to-do.html">To-Do List</a></li>
+        </ul>
+    </nav>
+    <main class="divider">
+      <section class="login">
+        <h1>Login</h1>
+        <form action="#" id="login">
+          <fieldset>
+            <label>Email</label><input type="text", name="email", id="email", autocomplete="off" autocapitalize="on" required>
+            <label>Password</label><input type="password", name="password", id="password", autocomplete="off" autocapitalize="on" required>
+          </fieldset>
+            <br><button class="login-button" id="loginbutton">Login</button><br>
+        </form>
+        <a href="../view/sign-up.html">Not a user? Sign Up</a>
+      </section>
+    </main>
+    <footer>
+        <p>Check-It is legit.</p>
+    </footer>
+    <script src="../js/menu.js"></script>
+</body>
+</html>
