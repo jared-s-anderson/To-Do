@@ -1,7 +1,9 @@
 export default class Calendar {
-    constructor(year, month){
+    constructor(year, month, date, day){
         this.year = year;
         this.month = month;
+        this.date = date;
+        this.day = day;
         this.sun = [];
         this.mon = [];
         this.tue = [];
@@ -16,6 +18,7 @@ export default class Calendar {
         this.fourthWeek = [];
         this.fifthWeek = [];
         this.sixthWeek = [];
+        this.week = [];
         this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     }
 
@@ -32,8 +35,6 @@ export default class Calendar {
             this.populateCalWhenNotStartOnSun();
         }
 
-        this.displayCalendar();
-        
     }
 
     getFirstDay(year, month){
@@ -475,8 +476,307 @@ export default class Calendar {
             individDay.appendChild(minusElement);
             month.appendChild(individDay);
         }
+        console.log(month)
         calendarElement.appendChild(month);
 
     }
 
+    populateWeekView(){
+        document.querySelector('#current-month-year').innerHTML = `${this.months[this.month]} ${this.year}`;
+
+
+        const weekElement = document.querySelector('#week');
+        const week = document.createElement('div');
+        const weekClassList = week.classList;
+        weekClassList.add('week');
+
+        console.log(this.aMonth)
+
+        console.log(this.date)
+
+        for (let i = 0; i < 7; i++){
+            const weekDaysArr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const weekDays = document.createElement('li');
+            const weekDaysClassList = weekDays.classList;
+            weekDaysClassList.add('weekDaysHeader');
+            const daysHeader = document.createElement('span');
+            daysHeader.innerHTML = weekDaysArr[i];
+
+            weekDays.appendChild(daysHeader);
+            week.appendChild(weekDays);
+        }
+
+        if (this.firstWeek.includes(this.date)){
+            for (let i = 0; i < this.firstWeek.length; i++){
+                const individDay = document.createElement('li');
+                const individDayClassList = individDay.classList;
+                //individDayClassList.add('day');
+
+                this.week.push(this.firstWeek[i]);
+
+                if (this.week > 7){
+                    individDayClassList.add('prevMonthDay');
+                } else {
+                    individDayClassList.add('day');
+                }
+
+                const dayOfMonthElement = document.createElement('span');
+                dayOfMonthElement.innerHTML = this.week[i];
+
+                const addElement = document.createElement('img');
+                addElement.style.height = '25px';
+                addElement.style.width = '25px';
+                addElement.addEventListener('mouseover', () => {
+                    addElement.style.transitionDuration = '1s';
+                    addElement.style.transform = 'rotate(-90deg)'
+                });
+                addElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+                addElement.src = '../icons/plus.png';
+
+                const minusElement = document.createElement('img');
+                minusElement.style.height = '25px';
+                minusElement.style.width = '25px';
+
+                minusElement.addEventListener('mouseover', () => {
+                    minusElement.style.transitionDuration = '1s';
+                    minusElement.style.transform = 'rotate(-90deg)'
+                });
+                minusElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+
+                minusElement.src = '../icons/minus.png';
+
+
+                individDay.appendChild(dayOfMonthElement);
+                individDay.appendChild(addElement);
+                individDay.appendChild(minusElement);
+                week.appendChild(individDay);
+                
+            }
+            
+        }
+
+        if(this.secondWeek.includes(this.date)){
+            for (let i = 0; i < 7; i++){
+                const individDay = document.createElement('li');
+                const individDayClassList = individDay.classList;
+                individDayClassList.add('day');
+    
+                this.week.push(this.secondWeek[i]);
+                const dayOfMonthElement = document.createElement('span');
+                dayOfMonthElement.innerHTML = this.week[i];
+    
+                const addElement = document.createElement('img');
+                addElement.style.height = '25px';
+                addElement.style.width = '25px';
+                addElement.addEventListener('mouseover', () => {
+                    addElement.style.transitionDuration = '1s';
+                    addElement.style.transform = 'rotate(-90deg)'
+                });
+                addElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+                addElement.src = '../icons/plus.png';
+    
+                const minusElement = document.createElement('img');
+                minusElement.style.height = '25px';
+                minusElement.style.width = '25px';
+    
+                minusElement.addEventListener('mouseover', () => {
+                    minusElement.style.transitionDuration = '1s';
+                    minusElement.style.transform = 'rotate(-90deg)'
+                });
+                minusElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+    
+                minusElement.src = '../icons/minus.png';
+    
+                individDay.appendChild(dayOfMonthElement);
+                individDay.appendChild(addElement);
+                individDay.appendChild(minusElement);
+                week.appendChild(individDay);
+            }
+        }
+
+        else if(this.thirdWeek.includes(this.day)){
+            for (let i = 0; i < 7; i++){
+                const individDay = document.createElement('li');
+                const individDayClassList = individDay.classList;
+                individDayClassList.add('day');
+
+                this.week.push(this.thirdWeek[i]);
+    
+                const dayOfMonthElement = document.createElement('span');
+                dayOfMonthElement.innerHTML = this.week[i];
+    
+                const addElement = document.createElement('img');
+                addElement.style.height = '25px';
+                addElement.style.width = '25px';
+                addElement.addEventListener('mouseover', () => {
+                    addElement.style.transitionDuration = '1s';
+                    addElement.style.transform = 'rotate(-90deg)'
+                });
+                addElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+                addElement.src = '../icons/plus.png';
+    
+                const minusElement = document.createElement('img');
+                minusElement.style.height = '25px';
+                minusElement.style.width = '25px';
+    
+                minusElement.addEventListener('mouseover', () => {
+                    minusElement.style.transitionDuration = '1s';
+                    minusElement.style.transform = 'rotate(-90deg)'
+                });
+                minusElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+    
+                minusElement.src = '../icons/minus.png';
+    
+                individDay.appendChild(dayOfMonthElement);
+                individDay.appendChild(addElement);
+                individDay.appendChild(minusElement);
+                week.appendChild(individDay);
+            }
+        }
+
+        else if(this.fourthWeek.includes(this.day)){
+            for (let i = 0; i < 7; i++){
+                const individDay = document.createElement('li');
+                const individDayClassList = individDay.classList;
+                individDayClassList.add('day');
+
+                this.week.push(this.fourthWeek[i]);
+    
+                const dayOfMonthElement = document.createElement('span');
+                dayOfMonthElement.innerHTML = this.week[i];
+    
+                const addElement = document.createElement('img');
+                addElement.style.height = '25px';
+                addElement.style.width = '25px';
+                addElement.addEventListener('mouseover', () => {
+                    addElement.style.transitionDuration = '1s';
+                    addElement.style.transform = 'rotate(-90deg)'
+                });
+                addElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+                addElement.src = '../icons/plus.png';
+    
+                const minusElement = document.createElement('img');
+                minusElement.style.height = '25px';
+                minusElement.style.width = '25px';
+    
+                minusElement.addEventListener('mouseover', () => {
+                    minusElement.style.transitionDuration = '1s';
+                    minusElement.style.transform = 'rotate(-90deg)'
+                });
+                minusElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+    
+                minusElement.src = '../icons/minus.png';
+    
+                individDay.appendChild(dayOfMonthElement);
+                individDay.appendChild(addElement);
+                individDay.appendChild(minusElement);
+                week.appendChild(individDay);
+            }
+        }
+
+         else if(this.fifthWeek.includes(this.day)){
+            for (let i = 0; i < 7; i++){
+                const individDay = document.createElement('li');
+                const individDayClassList = individDay.classList;
+                individDayClassList.add('day');
+
+                this.week.push(this.fifthWeek[i]);
+    
+                const dayOfMonthElement = document.createElement('span');
+                dayOfMonthElement.innerHTML = this.week[i];
+    
+                const addElement = document.createElement('img');
+                addElement.style.height = '25px';
+                addElement.style.width = '25px';
+                addElement.addEventListener('mouseover', () => {
+                    addElement.style.transitionDuration = '1s';
+                    addElement.style.transform = 'rotate(-90deg)'
+                });
+                addElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+                addElement.src = '../icons/plus.png';
+    
+                const minusElement = document.createElement('img');
+                minusElement.style.height = '25px';
+                minusElement.style.width = '25px';
+    
+                minusElement.addEventListener('mouseover', () => {
+                    minusElement.style.transitionDuration = '1s';
+                    minusElement.style.transform = 'rotate(-90deg)'
+                });
+                minusElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+    
+                minusElement.src = '../icons/minus.png';
+    
+                individDay.appendChild(dayOfMonthElement);
+                individDay.appendChild(addElement);
+                individDay.appendChild(minusElement);
+                week.appendChild(individDay);
+            }
+        }
+
+        else if(this.sixthWeek.includes(this.day)){
+            for (let i = 0; i < 7; i++){
+                const individDay = document.createElement('li');
+                const individDayClassList = individDay.classList;
+                individDayClassList.add('day');
+
+                this.week.push(this.sixthWeek[i]);
+    
+                const dayOfMonthElement = document.createElement('span');
+                dayOfMonthElement.innerHTML = this.week[i];
+    
+                const addElement = document.createElement('img');
+                addElement.style.height = '25px';
+                addElement.style.width = '25px';
+                addElement.addEventListener('mouseover', () => {
+                    addElement.style.transitionDuration = '1s';
+                    addElement.style.transform = 'rotate(-90deg)'
+                });
+                addElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+                addElement.src = '../icons/plus.png';
+    
+                const minusElement = document.createElement('img');
+                minusElement.style.height = '25px';
+                minusElement.style.width = '25px';
+    
+                minusElement.addEventListener('mouseover', () => {
+                    minusElement.style.transitionDuration = '1s';
+                    minusElement.style.transform = 'rotate(-90deg)'
+                });
+                minusElement.addEventListener('click', () => {
+                    window.location.href = '../view/to-do.html';
+                });
+    
+                minusElement.src = '../icons/minus.png';
+    
+                individDay.appendChild(dayOfMonthElement);
+                individDay.appendChild(addElement);
+                individDay.appendChild(minusElement);
+                week.appendChild(individDay);
+            }
+        }
+        weekElement.appendChild(week);
+    }
 }

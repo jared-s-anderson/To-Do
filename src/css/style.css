@@ -422,6 +422,13 @@ nav ul li a:hover
   outline: auto;
 }
 
+.week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  list-style-type: none;
+  outline: auto;
+}
+
 .weekDaysHeader {
   text-align: center;
   padding: 10px;
