@@ -11,12 +11,6 @@ async function convertToJson(res) {
 
 export default class ExternalServices {
 
-    getdata() {
-        path = "../json/test.json"
-        return fetch(path)
-            .then(convertToJson)
-            .then((data) => data.Result);
-    }
 
     async login(user){
         // console.log(test_server + 'users?email_like=' + user.email)
@@ -32,6 +26,32 @@ export default class ExternalServices {
         body: JSON.stringify(user),
       };
       return await fetch(test_server + 'users/', options).then(convertToJson);
+    }
+
+    async getDataByUser(userID){
+      return await fetch(test_server + 'tasks?users_like=' + userID).then(convertToJson);
+    }
+
+    async getDataByID(id){
+      return await fetch(test_server + 'tasks?users_like=' + id).then(convertToJson);
+    }
+
+    async addToDo(todo){
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(todo),
+      };
+      return await fetch(test_server + 'tasks/', options).then(convertToJson);
+    }
+
+    async delete(id){
+      const options = {
+        method: 'DELETE'
+      };
+      return await fetch(test_server + 'tasks?id_like=' + id, options).then(convertToJson);
     }
 
 }
