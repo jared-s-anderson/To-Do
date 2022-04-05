@@ -87,14 +87,16 @@ const addItem = async (e) => {
 
     console.log(item)
 
-    const res = await services.addToDo(item);
-    console.log(res)
-
     items.push(item);
     document.forms[0].reset();
     let pre = document.querySelector('.todo-list');
     pre.textContent = '\n' + JSON.stringify(items, '\t', 2);
     localStorage.setItem('Items', JSON.stringify(items));
+
+    const res = await services.addToDo(item);
+    console.log(res)
+
+    
 }
 
 document.querySelector('#add-btn').addEventListener('click', addItem);
