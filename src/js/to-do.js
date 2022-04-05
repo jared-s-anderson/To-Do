@@ -45,6 +45,7 @@ function deleteItem(index) {
     displayTodoList();
 }
 */
+
 /*
 
 function formDataToJSON(element) {
@@ -71,8 +72,12 @@ document.querySelector('#add-btn').addEventListener('click', (e) => {
     
 });
 */
+import ExternalServices from "./externalServices";
+
+const services = new ExternalServices();
+
 let items = [];
-const addItem = (e) =>{
+const addItem = async (e) => {
     e.preventDefault();
     let item = {
         title: document.getElementById('title').value,
@@ -81,6 +86,9 @@ const addItem = (e) =>{
     }
 
     console.log(item)
+
+    const res = await services.addToDo(item);
+    console.log(res)
 
     items.push(item);
     document.forms[0].reset();

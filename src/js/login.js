@@ -21,7 +21,8 @@ function formDataToJSON(formElement) {
       }
       else{
         console.log(res);
-        localStorage.setItem("userID", res[0].id)
+        localStorage.setItem("userID", res[0].id);
+        document.location = "../view/calendar.html";
       }
 
       // document.location = '../';
